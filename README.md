@@ -72,6 +72,13 @@ pip install -r requirements.txt
    - Share your Google Drive folder with this email address
    - Get the folder ID from the folder URL: `https://drive.google.com/drive/folders/FOLDER_ID_HERE`
 
+**Important Notes for Shared Folders:**
+- ✅ **Personal Drive Folders**: Share the folder with the service account email (grant "Viewer" access)
+- ✅ **Someone Else's Shared Folder**: Ask the folder owner to share with your service account email
+- ✅ **Google Shared Drive (Team Drive)**: Add the service account as a member with "Viewer" access
+- 📝 The tool automatically supports all types of drives (personal, shared, team drives)
+- 📖 **See [SHARED_FOLDER_GUIDE.md](SHARED_FOLDER_GUIDE.md) for detailed instructions on accessing shared folders**
+
 ### Configuration
 
 Edit the `CONFIG` dictionary in `face_search.py`:
@@ -265,6 +272,13 @@ pip install -r requirements.txt
    - Lấy email của service account từ `credentials.json` (client_email)
    - Chia sẻ thư mục Google Drive của bạn với email này
    - Lấy folder ID từ URL thư mục: `https://drive.google.com/drive/folders/FOLDER_ID_HERE`
+
+**Lưu ý Quan trọng cho Thư mục Chia sẻ:**
+- ✅ **Thư mục Drive Cá nhân**: Chia sẻ thư mục với email service account (cấp quyền "Viewer")
+- ✅ **Thư mục của Người khác**: Yêu cầu chủ thư mục chia sẻ với email service account của bạn
+- ✅ **Google Shared Drive (Team Drive)**: Thêm service account như thành viên với quyền "Viewer"
+- 📝 Công cụ tự động hỗ trợ tất cả loại drive (cá nhân, chia sẻ, team drive)
+- 📖 **Xem [SHARED_FOLDER_GUIDE.md](SHARED_FOLDER_GUIDE.md) để biết hướng dẫn chi tiết về truy cập thư mục chia sẻ**
 
 ### Cấu hình
 

@@ -30,7 +30,7 @@ def authenticate_drive():
 def download_file(service, file_id, file_name, output_dir):
     """Download a single file from Google Drive"""
     try:
-        request = service.files().get_media(fileId=file_id)
+        request = service.files().get_media(fileId=file_id, supportsAllDrives=True)
         file_path = os.path.join(output_dir, file_name)
         
         with open(file_path, 'wb') as f:
