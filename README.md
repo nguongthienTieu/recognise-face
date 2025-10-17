@@ -22,6 +22,8 @@ A powerful face recognition tool that can search and identify your photos among 
 - Google Cloud account with Drive API enabled
 - Service account credentials for Google Drive API
 
+**Using PyCharm?** Check out our [PyCharm Setup Guide](PYCHARM_SETUP.md) for IDE-specific instructions.
+
 ### Installation
 
 1. **Clone the repository**
@@ -213,6 +215,8 @@ Công cụ nhận diện khuôn mặt mạnh mẽ có khả năng tìm kiếm v�
 - Python 3.8 trở lên
 - Tài khoản Google Cloud có Drive API được kích hoạt
 - Service account credentials cho Google Drive API
+
+**Sử dụng PyCharm?** Xem [Hướng dẫn Cài đặt PyCharm](PYCHARM_SETUP.md) để biết hướng dẫn cụ thể cho IDE.
 
 ### Cài đặt
 
