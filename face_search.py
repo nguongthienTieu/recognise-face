@@ -11,18 +11,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 from tqdm import tqdm
 from PIL import Image
-
-# Cấu hình
-CONFIG = {
-    'DRIVE_FOLDER_ID': 'your_folder_id_here',  # ID thư mục Google Drive
-    'TARGET_IMAGE_PATH': 'target_person.jpg',   # Ảnh mẫu của bạn
-    'CREDENTIALS_FILE': 'credentials.json',      # File credentials Google Drive API
-    'CACHE_FILE': 'face_encodings.cache',       # Cache các face encodings
-    'RESULTS_DIR': 'matched_results',            # Thư mục kết quả
-    'TOLERANCE': 0.6,                            # Độ chính xác (càng thấp càng nghiêm ngặt)
-    'NUM_THREADS': 4,                            # Số threads xử lý
-    'BATCH_SIZE': 100                            # Số ảnh xử lý mỗi batch
-}
+from config import CONFIG, ADVANCED_CONFIG
 
 class FaceSearchEngine:
     def __init__(self, config):
@@ -64,6 +53,10 @@ class FaceSearchEngine:
     
     def load_cache(self):
         """Load cache encodings nếu có"""
+        if not self.config.get('ENABLE_CACHE', True):
+            print("⚠ Cache đã bị tắt")
+            return
+            
         if os.path.exists(self.config['CACHE_FILE']):
             try:
                 with open(self.config['CACHE_FILE'], 'rb') as f:
@@ -75,6 +68,9 @@ class FaceSearchEngine:
     
     def save_cache(self):
         """Lưu cache encodings"""
+        if not self.config.get('ENABLE_CACHE', True):
+            return
+            
         try:
             with open(self.config['CACHE_FILE'], 'wb') as f:
                 pickle.dump(self.encodings_cache, f)
@@ -126,8 +122,12 @@ class FaceSearchEngine:
             
             file_buffer.seek(0)
             image = Image.open(file_buffer)
+            # Convert RGBA to RGB if necessary
+            if image.mode == 'RGBA':
+                image = image.convert('RGB')
             return np.array(image)
         except Exception as e:
+            # Silently return None for failed downloads to avoid cluttering output
             return None
     
     def process_single_image(self, file_info):
@@ -259,5 +259,28 @@ class FaceSearchEngine:
             print("\n😔 Không tìm thấy ảnh nào khớp")
 
 if __name__ == "__main__":
+    import sys
+    
+    # Kiểm tra cấu hình cơ bản / Check basic configuration
+    if CONFIG['DRIVE_FOLDER_ID'] == 'your_folder_id_here':
+        print("⚠ CẢNH BÁO: Vui lòng cập nhật DRIVE_FOLDER_ID trong config.py!")
+        print("⚠ WARNING: Please update DRIVE_FOLDER_ID in config.py!")
+        sys.exit(1)
+    
+    if not os.path.exists(CONFIG['CREDENTIALS_FILE']):
+        print(f"⚠ CẢNH BÁO: Không tìm thấy file {CONFIG['CREDENTIALS_FILE']}!")
+        print(f"⚠ WARNING: {CONFIG['CREDENTIALS_FILE']} not found!")
+        print("Vui lòng tạo file credentials.json hoặc xem hướng dẫn trong README.md")
+        print("Please create credentials.json or see instructions in README.md")
+        sys.exit(1)
+    
+    if not os.path.exists(CONFIG['TARGET_IMAGE_PATH']):
+        print(f"⚠ CẢNH BÁO: Không tìm thấy ảnh mẫu {CONFIG['TARGET_IMAGE_PATH']}!")
+        print(f"⚠ WARNING: Target image {CONFIG['TARGET_IMAGE_PATH']} not found!")
+        print("Vui lòng thêm ảnh mẫu của bạn hoặc cập nhật TARGET_IMAGE_PATH trong config.py")
+        print("Please add your target image or update TARGET_IMAGE_PATH in config.py")
+        sys.exit(1)
+    
+    # Chạy công cụ / Run the tool
     engine = FaceSearchEngine(CONFIG)
     engine.run()
