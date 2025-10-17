@@ -93,7 +93,10 @@ class FaceSearchEngine:
                     spaces='drive',
                     fields='nextPageToken, files(id, name, mimeType)',
                     pageToken=page_token,
-                    pageSize=1000
+                    pageSize=1000,
+                    supportsAllDrives=True,
+                    includeItemsFromAllDrives=True,
+                    corpora='allDrives'
                 ).execute()
                 
                 files = response.get('files', [])
@@ -112,7 +115,7 @@ class FaceSearchEngine:
     def download_image(self, file_id):
         """Download ảnh từ Google Drive về memory"""
         try:
-            request = self.drive_service.files().get_media(fileId=file_id)
+            request = self.drive_service.files().get_media(fileId=file_id, supportsAllDrives=True)
             file_buffer = io.BytesIO()
             downloader = MediaIoBaseDownload(file_buffer, request)
             

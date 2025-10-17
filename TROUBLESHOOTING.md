@@ -101,6 +101,39 @@
 
 ---
 
+#### Problem: `Cannot access shared folder` or `Folder not found` (someone else's folder)
+**English:**
+- **Cause**: Service account doesn't have access to the shared folder
+- **Solution**: 
+  1. **For folders shared with you**: Ask the folder owner to:
+     - Open the shared folder in Google Drive
+     - Click "Share" or "Manage access"
+     - Add your service account email (from credentials.json)
+     - Grant "Viewer" or "Commenter" access
+  2. **For Google Shared Drives (Team Drives)**:
+     - Ask the Shared Drive admin to add your service account
+     - Go to Shared Drive settings → Members
+     - Add the service account with "Viewer" access
+  3. **Verify the folder ID**: Copy it from the URL when viewing the folder
+  4. The tool automatically supports all drive types (no extra configuration needed)
+
+**Tiếng Việt:**
+- **Nguyên nhân**: Service account không có quyền truy cập thư mục chia sẻ
+- **Giải pháp**: 
+  1. **Đối với thư mục được chia sẻ với bạn**: Yêu cầu chủ thư mục:
+     - Mở thư mục được chia sẻ trong Google Drive
+     - Nhấn "Chia sẻ" hoặc "Quản lý quyền truy cập"
+     - Thêm email service account của bạn (từ credentials.json)
+     - Cấp quyền "Viewer" hoặc "Commenter"
+  2. **Đối với Google Shared Drive (Team Drive)**:
+     - Yêu cầu admin của Shared Drive thêm service account của bạn
+     - Vào cài đặt Shared Drive → Members
+     - Thêm service account với quyền "Viewer"
+  3. **Xác minh folder ID**: Sao chép từ URL khi xem thư mục
+  4. Công cụ tự động hỗ trợ tất cả loại drive (không cần cấu hình thêm)
+
+---
+
 ### 3. Face Recognition Issues / Vấn đề Nhận diện Khuôn mặt
 
 #### Problem: `No faces detected in target image`
