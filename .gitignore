@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Google Drive credentials and sensitive data
+credentials.json
+token.json
+service-account.json
+
+# Cache files
+*.cache
+face_encodings.cache
+
+# Results and output
+matched_results/
+results/
+output/
+
+# Target images (users should add their own)
+target_person.jpg
+target_person.png
+
+# Data directories
+data/raw/*
+!data/raw/.gitkeep
+
+# Logs
+*.log
