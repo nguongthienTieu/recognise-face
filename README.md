@@ -112,6 +112,15 @@ python face_search.py
    - `results.json`: Detailed JSON data with all matches
    - `report.txt`: Human-readable text report
 
+4. **Additional utilities** (optional)
+```bash
+# View detailed statistics and top matches
+python view_results.py
+
+# Download all matched images from Google Drive
+python download_results.py
+```
+
 ### Results Format
 
 The tool generates two output files:
@@ -149,6 +158,24 @@ STT   Filename                                  Similarity      Distance
 - **Large Datasets**: Increase `NUM_THREADS` for faster processing
 - **Memory Issues**: Reduce `NUM_THREADS` or `BATCH_SIZE`
 - **Accuracy**: Adjust `TOLERANCE` based on your needs
+
+### Helper Scripts
+
+**view_results.py** - Analyze and view search results
+- Display comprehensive statistics
+- Show top matches with quality indicators
+- Identify low confidence matches
+- Export matched file list
+
+**download_results.py** - Download matched images
+- Automatically downloads all matched images from Google Drive
+- Organizes files with similarity scores in filenames
+- Saves to `matched_results/downloaded_images/`
+
+**setup.py** - Interactive setup wizard
+- Guides you through initial configuration
+- Validates required files and settings
+- Helps configure Google Drive folder ID
 
 ### Troubleshooting
 
@@ -277,6 +304,15 @@ python face_search.py
    - `results.json`: Dữ liệu JSON chi tiết với tất cả kết quả khớp
    - `report.txt`: Báo cáo văn bản dễ đọc
 
+4. **Công cụ bổ sung** (tùy chọn)
+```bash
+# Xem thống kê chi tiết và top kết quả khớp nhất
+python view_results.py
+
+# Tải về tất cả ảnh khớp từ Google Drive
+python download_results.py
+```
+
 ### Định dạng Kết quả
 
 Công cụ tạo ra hai file kết quả:
@@ -314,6 +350,24 @@ STT   Tên file                                  Độ tương đồng   Distanc
 - **Dataset lớn**: Tăng `NUM_THREADS` để xử lý nhanh hơn
 - **Vấn đề bộ nhớ**: Giảm `NUM_THREADS` hoặc `BATCH_SIZE`
 - **Độ chính xác**: Điều chỉnh `TOLERANCE` theo nhu cầu
+
+### Công cụ Hỗ trợ
+
+**view_results.py** - Phân tích và xem kết quả
+- Hiển thị thống kê toàn diện
+- Hiển thị top kết quả khớp với chỉ số chất lượng
+- Xác định các kết quả khớp độ tin cậy thấp
+- Xuất danh sách file khớp
+
+**download_results.py** - Tải ảnh khớp về
+- Tự động tải tất cả ảnh khớp từ Google Drive
+- Tổ chức file với điểm tương đồng trong tên file
+- Lưu vào `matched_results/downloaded_images/`
+
+**setup.py** - Trình thiết lập tương tác
+- Hướng dẫn cấu hình ban đầu
+- Kiểm tra các file và thiết lập bắt buộc
+- Giúp cấu hình Google Drive folder ID
 
 ### Xử lý Sự cố
 
