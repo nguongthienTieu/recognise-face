@@ -19,7 +19,7 @@ The Face Recognition Search Tool now fully supports accessing Google Drive folde
 #### Step 1: Get the Service Account Email
 1. Open your `credentials.json` file
 2. Find the `client_email` field
-3. Copy the email address (looks like: `your-service-account@project-id.iam.gserviceaccount.com`)
+3. Copy the email address (example: `face-search-sa@my-project-12345.iam.gserviceaccount.com`)
 
 #### Step 2: Request Access from Folder Owner
 Ask the person who owns the folder to share it with you:
@@ -108,7 +108,7 @@ Công cụ Tìm kiếm Nhận diện Khuôn mặt giờ đây hỗ trợ đầy 
 #### Bước 1: Lấy Email Service Account
 1. Mở file `credentials.json` của bạn
 2. Tìm trường `client_email`
-3. Sao chép địa chỉ email (có dạng: `your-service-account@project-id.iam.gserviceaccount.com`)
+3. Sao chép địa chỉ email (ví dụ: `face-search-sa@my-project-12345.iam.gserviceaccount.com`)
 
 #### Bước 2: Yêu cầu Quyền Truy cập từ Chủ Thư mục
 Yêu cầu người sở hữu thư mục chia sẻ nó với bạn:
