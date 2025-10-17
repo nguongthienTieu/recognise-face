@@ -77,6 +77,7 @@ pip install -r requirements.txt
 - ✅ **Someone Else's Shared Folder**: Ask the folder owner to share with your service account email
 - ✅ **Google Shared Drive (Team Drive)**: Add the service account as a member with "Viewer" access
 - 📝 The tool automatically supports all types of drives (personal, shared, team drives)
+- 📖 **See [SHARED_FOLDER_GUIDE.md](SHARED_FOLDER_GUIDE.md) for detailed instructions on accessing shared folders**
 
 ### Configuration
 
@@ -277,6 +278,7 @@ pip install -r requirements.txt
 - ✅ **Thư mục của Người khác**: Yêu cầu chủ thư mục chia sẻ với email service account của bạn
 - ✅ **Google Shared Drive (Team Drive)**: Thêm service account như thành viên với quyền "Viewer"
 - 📝 Công cụ tự động hỗ trợ tất cả loại drive (cá nhân, chia sẻ, team drive)
+- 📖 **Xem [SHARED_FOLDER_GUIDE.md](SHARED_FOLDER_GUIDE.md) để biết hướng dẫn chi tiết về truy cập thư mục chia sẻ**
 
 ### Cấu hình
 
