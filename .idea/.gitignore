@@ -1,0 +1,6 @@
+# PyCharm user-specific files (these should not be tracked)
+workspace.xml
+tasks.xml
+usage.statistics.xml
+dictionaries/
+shelf/
